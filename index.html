@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+	
+    <title>Apri Yulda - Public Health Lecturer & Research Strategist</title>
+    <meta name="description" content="Public health professional transforming data into community impact through education, research, and empowerment programs.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0066CC;
+            --accent: #00D9A3;
+            --dark: #0A0E27;
+            --light: #F8FAFC;
+            --gray: #64748B;
+            --gray-light: #E2E8F0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark) !important;
+        }
+        
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(0, 217, 163, 0.1);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .btn-primary-custom {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            color: var(--primary);
+        }
+        
+        .btn-secondary-custom {
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        
+        .btn-secondary-custom:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Impact Stats */
+        .stats {
+            background: white;
+            padding: 4rem 0;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.05);
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+        
+        /* About Section */
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(0, 217, 163, 0.2) 0%, rgba(0, 217, 163, 0.2) 100%);
+            padding: 0 0.3rem;
+            border-radius: 3px;
+        }
+        
+        /* Skills Section */
+        .skill-category {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+        }
+        
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-category h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .skill-tag {
+            background: var(--light);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--dark);
+            border: 2px solid var(--gray-light);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gray-light);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+        
+        .timeline-date {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .timeline-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-org {
+            color: var(--gray);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-description {
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-highlights {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .timeline-highlights ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .timeline-highlights li {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        /* Projects Section */
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 2.5rem 2rem;
+            color: white;
+        }
+        
+        .project-type {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-card h4 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .project-body {
+            padding: 2rem;
+        }
+        
+        .project-description {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .project-impact {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        /* Tech Stack */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tech-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        
+        .tech-item-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-item-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1f3a 100%);
+            color: white;
+            padding: 6rem 0;
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-link {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-link:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 100px;
+                text-align: center;
+            }
+            
+            .btn-secondary-custom {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            
+            .timeline {
+                padding-left: 2rem;
+            }
+            
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Scroll Animation */
+        [data-aos] {
+            pointer-events: auto;
+        }
+        
+        /* Custom Cursor for Desktop */
+        @media (min-width: 1024px) {
+            .cursor-dot {
+                width: 8px;
+                height: 8px;
+                background: var(--primary);
+                border-radius: 50%;
+                position: fixed;
+                pointer-events: none;
+                z-index: 9999;
+                transition: transform 0.2s ease;
+            }
+            
+            .cursor-outline {
+                width: 30px;
+                height: 30px;
+                border: 2px solid var(--primary);
+                border-radius: 50%;
+                position: fixed;
+                pointer-events: none;
+                z-index: 9998;
+                transition: all 0.15s ease;
+            }
+        }
+		
+	/* Hero Image - Circle Style */
+.hero-image-wrapper {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-image {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%; /* Makes it circular */
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+    animation: floatImage 6s ease-in-out infinite;
+    object-fit: cover; /* Ensures image fills the circle properly */
+    object-position: center; /* Centers the image */
+}
+
+.hero-image:hover {
+    transform: scale(1.08);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .hero-image-wrapper {
+        margin-bottom: 3rem;
+    }
+    
+    .hero-image {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-image {
+        width: 250px;
+        height: 250px;
+        border-width: 5px;
+    }
+}
+}
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">AY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+	
+	<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Text Content - LEFT SIDE -->
+            <div class="col-lg-7 order-2 order-lg-1 hero-content">
+                <div data-aos="fade-up">
+                    <div class="mono" style="color: var(--accent); font-weight: 600; margin-bottom: 1rem;">👋 Hello, I'm</div>
+                    <h1>Apri Yulda</h1>
+                    <p class="hero-subtitle">Public Health Educator & Research Strategist</p>
+                    <p class="hero-description">
+                        I turn complex health data into actionable insights and transform communities through evidence-based education. 
+                        From university lectures to grassroots programs, I bridge the gap between research and real-world impact.
+                    </p>
+                    <div class="d-flex flex-wrap">
+                        <a href="#contact" class="btn-primary-custom">Let's Collaborate</a>
+                        <a href="#projects" class="btn-secondary-custom">View My Work</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile Image - RIGHT SIDE -->
+            <div class="col-lg-5 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="200">
+                <div class="hero-image-wrapper">
+                    <img src="assets/photo.jpg" alt="Apri Yulda" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Impact Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Students Mentored</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Research Projects</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Communities Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div data-aos="fade-up">
+                        <h2 class="section-title">About Me</h2>
+                        <p class="section-subtitle">Building healthier communities through data, education, and empowerment</p>
+                    </div>
+                    
+                    <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+                        <p>
+                            I believe that <span class="highlight">public health isn't just about numbers—it's about people</span>. 
+                            With a Master's in Epidemiology and Biostatistics from Indonesia University, I've spent the last five years 
+                            connecting the dots between academic research and community transformation.
+                        </p>
+                        <p>
+                            As a lecturer at Muhammadiyah University of Muara Bungo, I'm shaping the next generation of public health 
+                            professionals. But my work goes beyond the classroom. I've facilitated community empowerment programs across 
+                            50+ villages, analyzed datasets spanning thousands of participants, and helped translate complex health policies 
+                            into actions that improve lives.
+                        </p>
+                        <p>
+                            What drives me? <span class="highlight">The moment when data reveals a pattern that leads to a breakthrough</span>. 
+                            The satisfaction of watching students connect theory to practice. The impact of seeing communities take ownership 
+                            of their health journey. Whether I'm coordinating research teams, designing curricula, or facilitating field programs, 
+                            my goal remains the same: make health knowledge accessible, actionable, and transformative.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section" style="background: var(--light);">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="section-title">What I Bring to the Table</h2>
+                <p class="section-subtitle mx-auto">A unique blend of academic rigor, technical skills, and community engagement</p>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-category">
+                        <div class="skill-icon">📊</div>
+                        <h4>Research & Analysis</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Epidemiology</span>
+                            <span class="skill-tag">Biostatistics</span>
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Research Design</span>
+                            <span class="skill-tag">Statistical Modeling</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-category">
+                        <div class="skill-icon">🎓</div>
+                        <h4>Education & Mentorship</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Curriculum Development</span>
+                            <span class="skill-tag">Lecturing</span>
+                            <span class="skill-tag">Student Guidance</span>
+                            <span class="skill-tag">Workshop Facilitation</span>
+                            <span class="skill-tag">Academic Assessment</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-category">
+                        <div class="skill-icon">🤝</div>
+                        <h4>Community Engagement</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Program Management</span>
+                            <span class="skill-tag">Stakeholder Coordination</span>
+                            <span class="skill-tag">Health Education</span>
+                            <span class="skill-tag">Community Mobilization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-category">
+                        <div class="skill-icon">💻</div>
+                        <h4>Technical Tools</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">SPSS</span>
+                            <span class="skill-tag">Mendeley</span>
+                            <span class="skill-tag">Reference Management</span>
+                            <span class="skill-tag">Data Visualization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-category">
+                        <div class="skill-icon">✍️</div>
+                        <h4>Communication</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Scientific Writing</span>
+                            <span class="skill-tag">Public Speaking</span>
+                            <span class="skill-tag">Report Writing</span>
+                            <span class="skill-tag">Presentation Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-category">
+                        <div class="skill-icon">🎨</div>
+                        <h4>Creative & Project Management</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Graphic Design</span>
+                            <span class="skill-tag">Social Media</span>
+                            <span class="skill-tag">Event Planning</span>
+                            <span class="skill-tag">Team Leadership</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h2 class="section-title">My Journey</h2>
+                <p class="section-subtitle">From data analyst to community facilitator to Lecturer</p>
+            </div>
+            
+            <div class="timeline mt-5">
+                <!-- Current Role -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-date">SEPT 2023 - PRESENT</div>
+                    <h3 class="timeline-title">Lecturer</h3>
+                    <div class="timeline-org">Muhammadiyah University of Muara Bungo</div>
+                    <p class="timeline-description">
+                        Leading the charge in public health education, where I transform theoretical knowledge into practical skills 
+                        that students carry into the field. My approach? Make every lecture count, every research project meaningful.
+                    </p>
+                    <div class="timeline-highlights">
+                        <ul>
+                            <li>Designed and delivered comprehensive public health curriculum covering epidemiology, biostatistics, and health technology</li>
+                            <li>Mentored 50+ undergraduate students in research methodologies and thesis development</li>
+                            <li>Supervised 15+ student research projects, guiding them from concept to publication-ready work</li>
+                            <li>Led departmental initiatives for curriculum modernization and quality improvement</li>
+                            <li>Integrated real-world case studies to bridge academic theory and community health challenges</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Community Role -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-date">MAR 2021 - JUN 2023</div>
+                    <h3 class="timeline-title">Community Empowerment Facilitator</h3>
+                    <div class="timeline-org">Ministry of Public Works and Housing</div>
+                    <p class="timeline-description">
+                        Brought health programs directly to communities that needed them most. This wasn't desk work—it was boots on the 
+                        ground, earning trust, building capacity, and creating sustainable change across 50+ villages.
+                    </p>
+                    <div class="timeline-highlights">
+                        <ul>
+                            <li>Facilitated health awareness programs reaching 5,000+ community members across rural Indonesia</li>
+                            <li>Coordinated with regional project managers to align community needs with national health initiatives</li>
+                            <li>Developed and managed project documentation including development plans, budget reports, and impact assessments</li>
+                            <li>Led participatory planning sessions, empowering communities to identify and prioritize their health needs</li>
+                            <li>Achieved 85% community participation rate through culturally-sensitive engagement strategies</li>
+                            <li>Trained 100+ local health volunteers in basic health education and disease prevention</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Research Assistant 1 -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-date">2019 - 2020</div>
+                    <h3 class="timeline-title">Research Assistant</h3>
+                    <div class="timeline-org">Indonesia University Research Grand Project</div>
+                    <p class="timeline-description">
+                        The deep dive into academic research that shaped my analytical mindset. Here, I learned that great research 
+                        isn't just about finding answers—it's about asking the right questions.
+                    </p>
+                    <div class="timeline-highlights">
+                        <ul>
+                            <li>Co-authored research proposals securing national grant funding for public health studies</li>
+                            <li>Coordinated cross-functional research teams of 10+ members, ensuring timeline and quality standards</li>
+                            <li>Analyzed complex epidemiological datasets using advanced statistical methods</li>
+                            <li>Prepared manuscripts for publication in peer-reviewed journals</li>
+                            <li>Presented research findings at academic conferences and stakeholder meetings</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Research Assistant 2 -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-date">2016 - 2017</div>
+                    <h3 class="timeline-title">Research Assistant</h3>
+                    <div class="timeline-org">Sriwijaya University Lecturer Research Project</div>
+                    <p class="timeline-description">
+                        My foundation in field research. I learned the art of data collection, team coordination, and turning raw 
+                        numbers into insights that matter.
+                    </p>
+                    <div class="timeline-highlights">
+                        <ul>
+                            <li>Managed field research teams including enumerators and data processors across multiple sites</li>
+                            <li>Developed standardized data collection protocols ensuring consistency and quality</li>
+                            <li>Created detailed progress reports and executive summaries for principal investigators</li>
+                            <li>Established efficient research workflows that reduced data collection time by 30%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section" style="background: var(--light);">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle mx-auto">Real projects, real impact, real solutions</p>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-type">Workshop Leadership</div>
+                            <h4>Citation Writing Workshop</h4>
+                            <p style="margin: 0; opacity: 0.9;">May 2024</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Led an international student seminar on "Citation Writing: A Practical Guide with Mendeley Reference Manager." 
+                                Equipped 100+ students with essential academic writing skills through hands-on training.
+                            </p>
+                            <div class="project-impact">
+                                📚 100+ students trained in research citation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-header" style="background: linear-gradient(135deg, #00D9A3, #00B386);">
+                            <div class="project-type">Event Management</div>
+                            <h4>Student Workshop Series</h4>
+                            <p style="margin: 0; opacity: 0.9;">December 2023</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Conceptualized, organized, and executed comprehensive student workshop from ground up. 
+                                Coordinated with speakers, designed certificates, and partnered with multiple universities for broader reach.
+                            </p>
+                            <div class="project-impact">
+                                🎯 3 universities collaborated • 200+ participants
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-header" style="background: linear-gradient(135deg, #6366F1, #4F46E5);">
+                            <div class="project-type">Public Health Webinar</div>
+                            <h4>National Health Webinar</h4>
+                            <p style="margin: 0; opacity: 0.9;">November 2023</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Organized national-level health webinar connecting students and professionals. 
+                                Managed event logistics, speaker coordination, and post-event documentation including certificate design.
+                            </p>
+                            <div class="project-impact">
+                                🌐 National reach • Multi-stakeholder engagement
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-header" style="background: linear-gradient(135deg, #EC4899, #DB2777);">
+                            <div class="project-type">Research Impact</div>
+                            <h4>Community Health Studies</h4>
+                            <p style="margin: 0; opacity: 0.9;">2019-2020</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Led comprehensive epidemiological research at Indonesia University, managing team coordination, 
+                                data analysis, and publication preparation. Contributed to evidence base for public health interventions.
+                            </p>
+                            <div class="project-impact">
+                                📊 Multi-site research • Publication-ready outputs
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-header" style="background: linear-gradient(135deg, #F59E0B, #D97706);">
+                            <div class="project-type">Community Development</div>
+                            <h4>Village Health Programs</h4>
+                            <p style="margin: 0; opacity: 0.9;">2021-2023</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Designed and implemented health empowerment programs across 50+ rural communities. 
+                                Created sustainable health education frameworks adopted by local governments.
+                            </p>
+                            <div class="project-impact">
+                                🏘️ 50+ villages • 5,000+ lives impacted
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-header" style="background: linear-gradient(135deg, #10B981, #059669);">
+                            <div class="project-type">Social Media Strategy</div>
+                            <h4>Health Campaign Management</h4>
+                            <p style="margin: 0; opacity: 0.9;">Ongoing</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Developed social media strategies for health awareness campaigns. 
+                                Created engaging content, coordinated event documentation, and amplified public health messaging.
+                            </p>
+                            <div class="project-impact">
+                                📱 Digital health education • Community engagement
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="section-title">Tools I Work With</h2>
+                <p class="section-subtitle mx-auto">From data analysis to content creation</p>
+            </div>
+            
+            <div class="tech-grid mt-5">
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="tech-item-icon">📊</div>
+                    <div class="tech-item-name">Excel</div>
+                </div>
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="tech-item-icon">📈</div>
+                    <div class="tech-item-name">SPSS</div>
+                </div>
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="tech-item-icon">📚</div>
+                    <div class="tech-item-name">Mendeley</div>
+                </div>
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="tech-item-icon">🎨</div>
+                    <div class="tech-item-name">Graphic Design</div>
+                </div>
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="tech-item-icon">📱</div>
+                    <div class="tech-item-name">Social Media</div>
+                </div>
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="tech-item-icon">📝</div>
+                    <div class="tech-item-name">MS Office Suite</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content" data-aos="fade-up">
+                <h2>Let's Create Impact Together</h2>
+                <p>
+                    Whether you need a research collaborator, an Lecturer who brings data to life, 
+                    or someone who can bridge academic knowledge with community action—I'm ready to contribute.
+                </p>
+                
+                <div class="contact-links">
+                    <a href="mailto:apriyulda08@gmail.com" class="contact-link">
+                        📧 apriyulda08@gmail.com
+                    </a>
+                    <a href="tel:+6282373706604" class="contact-link">
+                        📱 +62 823 7370 6604
+                    </a>
+                    <a href="https://www.linkedin.com/in/apriyulda" class="contact-link" target="_blank">
+                        💼 LinkedIn
+                    </a>
+                </div>
+                
+                <p style="opacity: 0.8; font-size: 1rem; margin-top: 2rem;">
+                    📍 Based in Jambi, Indonesia • Open to remote collaboration and speaking engagements
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Apri Yulda. Built with passion for public health and community empowerment.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+        
+        // Animated counter for stats
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + '+';
+                }
+            }, 16);
+        }
+        
+        // Trigger counter animation when stats section is in view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = document.querySelectorAll('.stat-number');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.textContent);
+                        animateCounter(counter, target);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+        
+        // Custom cursor (desktop only)
+        if (window.innerWidth > 1024) {
+            const cursorDot = document.createElement('div');
+            cursorDot.className = 'cursor-dot';
+            document.body.appendChild(cursorDot);
+            
+            const cursorOutline = document.createElement('div');
+            cursorOutline.className = 'cursor-outline';
+            document.body.appendChild(cursorOutline);
+            
+            let mouseX = 0, mouseY = 0;
+            let outlineX = 0, outlineY = 0;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                cursorDot.style.left = mouseX + 'px';
+                cursorDot.style.top = mouseY + 'px';
+            });
+            
+            function animateOutline() {
+                outlineX += (mouseX - outlineX) * 0.15;
+                outlineY += (mouseY - outlineY) * 0.15;
+                
+                cursorOutline.style.left = outlineX + 'px';
+                cursorOutline.style.top = outlineY + 'px';
+                
+                requestAnimationFrame(animateOutline);
+            }
+            animateOutline();
+            
+            // Scale cursor on hover
+            document.querySelectorAll('a, button, .skill-tag, .project-card').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorDot.style.transform = 'scale(2)';
+                    cursorOutline.style.transform = 'scale(1.5)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorDot.style.transform = 'scale(1)';
+                    cursorOutline.style.transform = 'scale(1)';
+                });
+            });
+        }
+    </script>
+</body>
+</html>
